@@ -1,0 +1,240 @@
+// Promo
+.sect__promo
+	display flex
+	align-items center
+	background-color $color-bg
+	position relative
+	&:before,
+	&:after
+		pseudo()
+		position absolute
+		background-position 50% 50%
+		background-repeat no-repeat
+		background-size contain
+		
+	&:before
+		top 0
+		horisontal-center()
+		width 565px
+		height 540px
+		background-image url('../img/backgrounds/decor/top.png')
+	&:after
+		bottom 0
+		left 0
+		width 800px
+		height 336px
+		background-image url('../img/backgrounds/decor/bottom.png')
+	
+	.container
+		height 100%
+		position relative
+		z-index 1
+	
+.promo-block
+	min-height 100vh
+	width 870px
+	padding-top 200px
+	position relative
+	padding-bottom 120px
+	display flex
+	align-items center
+	
+	&__content
+		position relative
+		z-index 2
+		padding-bottom 60px
+		.socials
+			position absolute
+			left 0
+			bottom 0
+			
+
+			
+	&__title
+		margin-bottom 70px
+		span
+			&:nth-child(2)
+				padding-left 120px
+			&:nth-child(3)
+				padding-left 15px
+		
+	&__text
+		padding-left 150px
+		margin-bottom 60px
+		
+	&__img
+		position absolute
+		left 100%
+		top 0
+		padding-top 0
+		bottom 120px
+		margin-left -150px
+		width 975px
+		
+// About
+.about-company
+	&__imgs
+		order -1
+		position relative
+		img
+			display block
+			width auto
+			max-width 570px
+			&:nth-child(2)
+				position absolute
+				width 420px
+				bottom 0
+				right 0
+				
+	&__text
+		padding-left 120px
+		
+		.btn
+			margin-top 60px
+			
+	&__content
+		.upper-title
+			margin-left -60px
+		.title
+			margin-left -60px
+			span
+				display block
+				&:nth-child(2)
+					padding-left 180px
+				&:last-child
+					padding-left 45px
+					
+// Advantages
+.sect__advantages
+	position relative
+	&:before,
+	&:after
+		pseudo()
+		position absolute
+		background-position 50% 50%
+		background-repeat no-repeat
+		background-size contain
+		
+	&:before
+		top 0
+		right 0
+		width 565px
+		height 540px
+		background-image url('../img/backgrounds/decor/top.png')
+	&:after
+		bottom 0
+		left 0
+		width 800px
+		height 336px
+		background-image url('../img/backgrounds/decor/bottom.png')
+	.container
+		position relative
+		z-index 2
+		
+.advantage
+	height 100%
+	background-color $basic-white-color
+	display flex
+	flex-wrap nowrap
+	&__img
+		width 48.28%
+		position relative
+		padding-top 0
+		
+		&--ic
+			display inline-block
+			position absolute
+			z-index 1
+			width 80px
+			height 80px
+			background-color $accent-color
+			background-position 50% 50%
+			background-repeat no-repeat
+			background-size 30px 30px
+			top 40px
+			right 40px
+			z-index 1
+			border-radius 50%
+			
+	&__content
+		width 51.72%
+		padding 50px
+		h2,h3,h4,h5,h6
+			text-transform uppercase
+			font 30px $CMed
+			margin-bottom 35px
+			color $dark-text-color
+			
+		b, strong
+			font-family $Bold
+			color $accent-color
+			
+		a
+			color $secondary-color
+			&:hover
+				text-decoration underline
+				
+.slider-counter
+	display flex
+	align-items flex-start
+	span
+		display inline-block
+		line-height 1
+	&__current
+		font 24px $CMed
+		color $dark-text-color
+	&__total
+		font 14px $CReg
+		color $light-text-color
+		margin-left 4px
+		margin-top 2px
+		
+.advantages-slider-counter
+	justify-content center
+	margin-bottom 40px
+	
+
+// Portfolio
+.portfolio-card
+	position relative
+	background-color $color-bg
+	height 550px
+	padding 80px 35px 45px 45px
+	text-align right
+	&__img
+		display block
+		padding-top 0
+		width 660px
+		height 500px
+		position absolute
+		overflow hidden
+		top -60px
+		left -60px
+		
+	&__content
+		text-align left
+		display inline-block
+		width 270px
+		color $dark-text-color
+	&__price
+		text-transform uppercase
+		
+		margin-top 50px
+		font 24px $CMed
+	&:before
+		pseudo()
+		position absolute
+		width 410px
+		height 275px
+		background url('../img/backgrounds/decor/lines.png') no-repeat / contain
+		bottom 35px
+		right 75px
+		
+	.slider-counter
+		position absolute
+		left 45px
+		bottom 45px
+		
+.permalink__wrapper
+	margin-top 40px
+	

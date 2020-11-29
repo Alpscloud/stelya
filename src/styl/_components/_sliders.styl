@@ -1,4 +1,5 @@
 .slider
+	position relative
 	&__loader
 		position absolute
 		fullSize()
@@ -18,6 +19,92 @@
 			visibility hidden
 			pointer-events none
 			
+	&-pagination
+		position relative
+		bottom auto
+		left auto
+		top auto
+		right auto
+		transform none
+		margin-top 40px
+		text-align center
+		white-space nowrap
+		display block
+		
+		.swiper-pagination-bullet
+			opacity 1
+			outline none
+			width 12px
+			height 12px
+			position relative
+			background transparent
+			transition border-color .17s ease-in-out
+			border 1px solid transparent
+			margin-right 14px
+			&:last-child
+				margin-right 0
+			&:hover
+				border-color $dark-text-color
+			&:before
+				pseudo()
+				position absolute
+				position-center()
+				width 6px
+				height 6px
+				border-radius 50%
+				background-color $dark-text-color
+			&-active
+				border-color $dark-text-color
+				
+	&-navigation
+		position absolute
+		position-center()
+		pointer-events none
+		margin-top -52px
+		width 100%
+		max-width 1115px
+		height 30px
+		z-index 2
+		display flex
+		align-items center
+		justify-content space-between
+		
+		&__btn
+			width 60px
+			height 60px
+			display inline-block
+			position relative
+			border-radius 50%
+			pointer-events auto
+			background-color $light-secondary-color
+			svg
+				svg()
+				position absolute
+				position-center() 
+			&:hover
+				background-color $secondary-color
+			
 .swiper-container
 	*
 		box-sizing border-box
+		
+// Advantages
+.advantages-slider
+	.swiper-slide
+		height auto
+		width 870px
+		
+.portfolio-slider
+	.swiper-slide
+		width 960px
+		padding-top 60px
+		
+	.slider-pagination
+		position absolute
+		horisontal-center()
+		bottom 40px
+		z-index 2
+		margin-top 0
+	.slider-navigation
+		max-width 1170px
+		margin-top 0
