@@ -15,37 +15,51 @@ input[type="search"]::-webkit-search-results-decoration
 
 
 .form
+	&-block
+		background-color $basic-white-color
+		box-shadow 0px 10px 50px 0px rgba(0, 47, 110, 0.15)
+		padding 60px
+	&__title
+		text-transform uppercase
+		color $dark-text-color
+		font 32px $CMed
+		margin-bottom 35px
+		text-align center
+	&__wrapper
+		position relative
+		z-index 2
+		margin-top -280px
+		margin-bottom $gutter-bottom
+		
+	&__notice
+		color $light-text-color
+		font-size 16px
+		margin-top 28px
+		a
+			color rgba($secondary-color, .5)
+			font-family $Med
+			&:hover
+				color $secondary-color
+		
 	&-input
 		display block
 		width 100%
-		padding 10px 15px
+		padding 0 0 25px 0
 		text-align left
 		background-color $light-color
-		border 2px solid transparent
-		font 1em $Reg
-		color $text-color
+		border-bottom 2px solid $input-border-color
+		font 16px $Reg
+		color $dark-text-color
 		&:hover,
 		&:focus
 			border-color $accent-color
-		&::-webkit-input-placeholder
-			font 1em $Reg
-			color $text-color
-		&::-moz-placeholder
-			font 1em $Reg
-			color $text-color
-		&:-moz-placeholder
-			font 1em $Reg
-			color $text-color
-		&:-ms-input-placeholder
-			font 1em $Reg
-			color $text-color
+		
 			
-		&.is-error
-			border-color red
+
 			
 	&-group
 		position relative
-		margin-bottom 10px
+		margin-bottom 50px
 		&:last-child
 			margin-bottom 0
 			
@@ -57,79 +71,74 @@ input[type="search"]::-webkit-search-results-decoration
 		min-height 200px
 	
 
-
-
-.form
-	&-checkbox
+.form-groups__row
+	margin 0 auto
+	max-width 1170px
+	.form-group
+		margin-bottom 0
 		display inline-block
+
+.form-group
+	&__label
+		display block
 		position relative
-		padding-left 25px
-		font 1em $Reg
-		line-height 1
-		color $text-color
-		&:before
-			pseudo()
-			transition all .17s ease-in-out
-			position absolute
-			left 0
-			vertical-center()
-			border-radius 2px
-			width 16px
-			height 16px
-			border 1px solid $text-color
-			background-position 50% 50%
-			background-repeat no-repeat
-			background-size 12px 12px
-			
-		&__label
+		margin-bottom 0
+		&--text
 			display inline-block
-			input
-				display none
-				&:checked
-					+ span
-						&:before
-							background-color $text-color
-							background-image url('../img/icons/svg/checkbox-ic.svg')
-							
-.form
-	&-radio
-		display inline-block
-		position relative
-		padding-left 25px
-		font 1em $Reg
-		line-height 1
-		color $text-color
-		&:before
-			pseudo()
-			transition all .17s ease-in-out
 			position absolute
+			color $text-color
+			transition all .17s ease-in-out
+			pointer-events none
 			left 0
-			vertical-center()
-			border-radius 50%
-			width 16px
-			height 16px
-			border 1px solid $text-color
-		&:after
-			pseudo()
-			transition all .17s ease-in-out
-			position absolute
-			left 2px
+			font 18px $Reg
 			top 2px
-			width 12px
-			height 12px
-			border-radius 50%
-			background-color $text-color
-			display none
-			
-
-			
-		&__label
-			display inline-block
+		
+		&.is-error
+			.form-group__label--text
+				top -17px
+				font-size 12px
+				color $error-color
+			.form-group__error
+				opacity 1
+				visibility visible
+				
 			input
-				display none
-				&:checked
-					+ span
-						&:after
-							display block
+				border-color $error-color
+				
+		&.is-active
+			.form-group__label--text
+				top -17px
+				font-size 12px
+				
+	&__error
+		display inline-block
+		position relative
+		opacity 0
+		top 0
+		left 0
+		position absolute
+		visibility hidden
+		pointer-events none
+		font 18px $Reg
+		color $error-color
 
-
+.form-input__email
+	display block
+	background-color #264e84
+	padding 30px 90px 30px 30px
+	color $basic-white-color
+	font 18px $Reg
+	width 100%
+	&::-webkit-input-placeholder
+		font 18px $Reg
+		color rgba($basic-white-color, .4)
+	&::-moz-placeholder
+		font 18px $Reg
+		color rgba($basic-white-color, .4)
+	&:-moz-placeholder
+		font 18px $Reg
+		color rgba($basic-white-color, .4)
+	&:-ms-input-placeholder
+		font 18px $Reg
+		color rgba($basic-white-color, .4)
+	

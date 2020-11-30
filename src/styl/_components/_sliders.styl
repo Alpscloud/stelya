@@ -76,7 +76,9 @@
 			position relative
 			border-radius 50%
 			pointer-events auto
-			background-color $light-secondary-color
+			background $light-secondary-color url('../img/icons/svg/nav_arrow.svg') 50% 50% no-repeat / 28px 23px
+			&:first-child
+				transform scaleX(-1)
 			svg
 				svg()
 				position absolute

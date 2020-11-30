@@ -27,6 +27,33 @@ $(document).ready(function() {
 	});	
 	// ========= =========== =========== ===========
 
+	// Popup
+	$('.js-open-consultation-popup-btn').on('click',function(e) {
+		e.preventDefault();
+		$('.js-consultation-popup').fadeIn(300);
+		$('html').addClass('is-fixed');
+	});
+
+
+	$('.js-close-popup-btn').on('click',function(e) {
+		e.preventDefault();
+		$(this).parents('.js-popup').fadeOut(300);
+		$('html').removeClass('is-fixed');
+	});
+
+	$('.popup__overflow').on('click', function(e) {
+		e.stopPropagation();
+
+		var content = $(this).find('.popup__body');
+
+		if(!content.is(e.target) && content.has(e.target).length === 0) {
+			$('html').removeClass('is-fixed');
+			$('.js-popup').fadeOut(300);
+		}
+
+	});
+	// ========= =========== =========== ===========
+
 	$('.js-open-menu-btn').on('click',function(e) {
 		e.preventDefault();
 		$(this).toggleClass('is-active');
@@ -129,7 +156,88 @@ $(document).ready(function() {
 
 	$('[data-fancybox]').fancybox();
 
-	$("input[type=tel]").inputmask({"mask": "+38 (999) 999-9999","clearIncomplete": false});
+	// ========= Ajax form ===========
+	$('.form-input').on('focus', function() {
+		var self = $(this);
+		var label = self.parents('.form-group__label');
+
+		label.addClass('is-active');
+	});
+
+	$('.form-input').on('blur', function() {
+		var self = $(this);
+		var label = self.parents('.form-group__label');
+
+
+
+
+		if (label.hasClass('is-active') && self.val() || self.val() !== '') {
+			label.addClass('is-valid');
+		} else {
+			label.removeClass('is-valid');
+			label.removeClass('is-active');
+		}
+
+		
+	});
+
+	$('.js-required-input').on('focus',function() {
+		var formGroup = $(this).parents('.form-group__label');
+
+		if(formGroup.hasClass('is-error')) {
+			formGroup.removeClass('is-error');
+		}
+
+
+		// var value = $(this).val();
+
+		// if(value || value !== '') {
+			
+		// }
+	});
+
+	$('form').submit(function(e) {
+		e.preventDefault();
+
+		var self = $(this);
+			inputs = self.find('.js-required-input'),
+			flag = true;
+
+		
+
+		// Validate
+		$(inputs).each(function() {
+			if(!$(this).val() || $(this).val() == "") {
+				$(this).parents('.form-group__label').addClass('is-error');
+				flag = false;
+			}
+		});
+
+		if(!flag) {return false;}
+
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: self.serialize()
+		}).done(function() {
+			// add active clases
+			setTimeout(function() {
+				// remove active classes
+				self.trigger("reset");
+			}, 2000);
+		});
+
+	});
+	// ========= =========== =========== ===========
+
+	$('input[type=tel]').inputmask({
+		'mask': '+38 (999) 999-9999',
+		'clearIncomplete': false,
+		'showMaskOnHover': false
+	});
+
+
+
 
 
 });

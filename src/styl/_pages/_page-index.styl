@@ -2,33 +2,8 @@
 .sect__promo
 	display flex
 	align-items center
-	background-color $color-bg
-	position relative
-	&:before,
-	&:after
-		pseudo()
-		position absolute
-		background-position 50% 50%
-		background-repeat no-repeat
-		background-size contain
-		
-	&:before
-		top 0
-		horisontal-center()
-		width 565px
-		height 540px
-		background-image url('../img/backgrounds/decor/top.png')
-	&:after
-		bottom 0
-		left 0
-		width 800px
-		height 336px
-		background-image url('../img/backgrounds/decor/bottom.png')
-	
 	.container
 		height 100%
-		position relative
-		z-index 1
 	
 .promo-block
 	min-height 100vh
@@ -107,29 +82,12 @@
 // Advantages
 .sect__advantages
 	position relative
-	&:before,
 	&:after
-		pseudo()
-		position absolute
-		background-position 50% 50%
-		background-repeat no-repeat
-		background-size contain
-		
+		display none
 	&:before
-		top 0
 		right 0
-		width 565px
-		height 540px
-		background-image url('../img/backgrounds/decor/top.png')
-	&:after
-		bottom 0
-		left 0
-		width 800px
-		height 336px
-		background-image url('../img/backgrounds/decor/bottom.png')
-	.container
-		position relative
-		z-index 2
+		left auto
+		transform none
 		
 .advantage
 	height 100%
@@ -237,4 +195,79 @@
 		
 .permalink__wrapper
 	margin-top 40px
+	
+// Blog
+.sect__blog
+	&:before
+		right 0
+		left auto
+		transform none
+		
+.article-cards__row
+	margin-left -22.5px
+	margin-right -22.5px
+	
+.article-card
+	&__wrapper
+		padding 0 22.5px 22.5px 22.5px
+		&:nth-child(even)
+			padding-bottom 0
+			padding-top 60px
+			
+	&__thumbnail
+		display block
+		margin-bottom 38px
+	&__title
+		font 20px $CMed
+		margin-bottom 23px
+		a
+			color $dark-text-color
+			&:hover
+				color $secondary-color
+				
+// Contacts
+.contacts
+	padding-bottom 50px
+	&__content
+		width 40%
+		padding-right 50px
+	&__map
+		width 60%
+		iframe
+			display block
+			width 100%
+			height 100%
+
+.address
+	color $dark-text-color
+	font 20px $Med
+	margin-bottom 50px
+	span
+		font 18px $Reg
+		color $text-color
+		display inline-block
+		margin-bottom 15px
+		
+.phones
+	display flex
+	flex-wrap wrap
+	margin-left -15px
+	margin-right -15px
+	li
+		width 50%
+		padding 0 15px 30px 15px
+	a
+		font 26px $CMed
+		color $dark-text-color
+		white-space nowrap
+		&:hover
+			color $secondary-color
+			
+.mail-link
+	color $accent-color
+	text-decoration underline
+	font 20px $Med
+	&:hover
+		text-decoration none
+		color $accent-hover-color
 	
