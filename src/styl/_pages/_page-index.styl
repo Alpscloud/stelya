@@ -2,6 +2,9 @@
 .sect__promo
 	display flex
 	align-items center
+	&:before
+		horisontal-center()
+		right auto
 	.container
 		height 100%
 	
@@ -15,13 +18,14 @@
 	align-items center
 	
 	&__content
-		position relative
+		// position relative
 		z-index 2
 		padding-bottom 60px
-		.socials
-			position absolute
-			left 0
-			bottom 0
+		
+	.socials
+		position absolute
+		left 30px
+		bottom 160px
 			
 
 			
@@ -51,6 +55,7 @@
 	&__imgs
 		order -1
 		position relative
+		padding-bottom 120px
 		img
 			display block
 			width auto
@@ -210,13 +215,21 @@
 .article-card
 	&__wrapper
 		padding 0 22.5px 22.5px 22.5px
-		&:nth-child(even)
+		&:nth-child(3n+2)
 			padding-bottom 0
 			padding-top 60px
 			
 	&__thumbnail
 		display block
 		margin-bottom 38px
+		backface-visibility hidden
+		img
+			position-center()
+			transition transform .23s ease-in-out
+			will-change transform
+		&:hover
+			img
+				transform translate(-50%, -50%) scale(1.03, 1.03)
 	&__title
 		font 20px $CMed
 		margin-bottom 23px
@@ -231,6 +244,10 @@
 	&__content
 		width 40%
 		padding-right 50px
+		.socials
+			margin-top 50px
+		.btn
+			margin-top 50px
 	&__map
 		width 60%
 		iframe

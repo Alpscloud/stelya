@@ -1,17 +1,26 @@
-<!-- Popup -->
-<div class="popup js-popup js-consultation-popup" >
-	<div class="popup__overflow">
-		<div class="popup__body">
-			<button class="btn-close js-close-popup-btn" type="button"></button>
-			<!-- Popup content-->
-			<div class="popup__content">
-				<p class="popup__title">оставьте заявку<br>на консультацию</p>
+<div class="callback fullscreen-popup js-callback">
+	<div class="container">
+		<div class="row  align-horisontal-between fullscreen-popup__row">
+			<div class="fullscreen-popup__col menu__col col-w-50">
+				<ul class="phones">
+					<li><a href="tel:+38 044 227 42 43" rel="nofollow">+38 044 227 42 43</a></li>
+					<li><a href="tel:+38 067 509 16 79" rel="nofollow">+38 067 509 16 79</a></li>
+					<li><a href="tel:+38 050 462 08 64" rel="nofollow">+38 050 462 08 64</a></li>
+					<li><a href="tel:+38 063 334 99 22" rel="nofollow">+38 063 334 99 22</a></li>
+				</ul>
+
+				{% include '../socials.html' %}
+			</div>
+			<!-- //col -->
+
+			<div class="fullscreen-popup__col col-w-50">
+				<p class="popup__title">Закажите<br>обратный звонок</p>
 				<form class="form ">
 					<!-- Hidden inputs -->
 					<input type="hidden" name="project_name" value="">
 					<input type="hidden" name="admin_email" value="email@email">
 					<input type="hidden" name="page" value="Страница:">
-					<input type="hidden" name="form_subject" value="Попап форма - Консультация">
+					<input type="hidden" name="form_subject" value="Попап форма - Обратный звонок">
 					<!-- // Hidden inputs -->
 
 
@@ -45,9 +54,10 @@
 					<p class="form__notice text-center">Нажимая на кнопку, Вы соглашаетесь с <a href="page-content.html">Политикой конфиденциальности</a></p>
 
 				</form>
+
 			</div>
-			<!-- //Popup content-->
+			<!-- //col -->
 		</div>
 	</div>
+	<!-- //container -->
 </div>
-<!-- //Popup -->

@@ -1,8 +1,51 @@
 .pagination
+	margin-top 60px
 	&__list
 		text-align center
+		display flex
+		flex-wrap nowrap
+		justify-content center
+		align-items center
+		height 60px
 	&__item
-		display inline-block
-		margin-right 10px
+		display block
+		margin-right 18px
+		&--nav
+			height 60px
 		&:last-child
 			margin-right 0
+			
+	&__link
+		flex-col-center()
+		width 6px
+		height 6px
+		border-radius 50%
+		background-color $dark-text-color
+		color $dark-text-color
+		text-transform uppercase
+		font 16px $Bold
+		color transparent
+		&.is-active
+			color $dark-text-color
+			width 60px
+			height 60px
+			border 2px solid $dark-text-color
+			background-color $basic-white-color
+			&:hover
+				background-color transparent
+		&:hover
+			background-color $secondary-color
+			
+		&--arrow
+			width 60px
+			height 60px
+			display inline-block
+			position relative
+			border-radius 50%
+			pointer-events auto
+			background $light-secondary-color url('../img/icons/svg/nav_arrow.svg') 50% 50% no-repeat / 28px 23px
+
+			&_prev
+				transform scaleX(-1)
+			&:hover
+				background-color $secondary-color

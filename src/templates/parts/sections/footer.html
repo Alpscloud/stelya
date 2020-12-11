@@ -1,7 +1,7 @@
 <footer class="footer gutters">
 	<div class="container">
-		<div class="row footer__row row-nowrap align-horisontal-between">
-			<div class="footer__col col-w-33">
+		<div class="row footer__row row-nowrap align-horisontal-between row-gutters">
+			<div class="footer__col col-w-33 col-gutters">
 				<p class="footer__title">компания “экополис”</p>
 				<p class="footer__subtitle">Натяжные потолки в Киеве и Киевской области</p>
 
@@ -14,10 +14,10 @@
 
 				<button class="btn js-open-callback-btn" type="button"><span data-text="заказать звонок">заказать звонок</span></button>
 
-				<p class="copyright">Компания “Экополис” &copy; 2020. Все права защищены.</p>
+				<p class="copyright hidden-tablet">Компания “Экополис” &copy; 2020. Все права защищены.</p>
 			</div>
 			<!-- //col -->
-			<div class="footer__col col-w-33">
+			<div class="footer__col col-w-33 col-gutters">
 				<p class="footer__col--title">навигация</p>
 
 				<nav class="footer-nav">
@@ -37,7 +37,7 @@
 				</nav>
 			</div>
 			<!-- //col -->
-			<div class="footer__col col-w-33">
+			<div class="footer__col col-w-33 col-gutters">
 				<p class="footer__col--title">Дополнительно</p>
 
 				<nav class="footer-nav">
@@ -65,6 +65,8 @@
 			</div>
 			<!-- //col -->
 		</div>
+
+		<p class="copyright visible-tablet hidden-desktop text-center">Компания “Экополис” &copy; 2020. Все права защищены.</p>
 	</div>
 	<!-- //container -->
 
@@ -79,6 +81,8 @@
 	</a>
 </footer>
 
+{% include '../components/popups/menu.html' %}
+{% include '../components/popups/callback.html' %}
 
 {% include '../components/popups/consultation.html' %}
 {% include '../components/popups/thanks.html' %}

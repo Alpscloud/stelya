@@ -1,0 +1,50 @@
+.page-header
+	position relative
+	overflow hidden
+	display flex
+	align-items flex-end
+	padding 55px
+	height 600px
+	margin-bottom 60px
+	&:before
+		pseudo()
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		background rgba($secondary-color, .75)
+		background -moz-linear-gradient(0deg, rgba(1,111,175,1) 0%, rgba(1,111,175,0) 100%)
+		background -webkit-linear-gradient(0deg, rgba(1,111,175,1) 0%, rgba(1,111,175,0) 100%)
+		background linear-gradient(0deg, rgba(1,111,175,1) 0%, rgba(1,111,175,0) 100%)
+		
+	.title
+		position relative
+		z-index 2
+		margin-bottom 0
+		color $basic-white-color
+		max-width 50%
+		
+
+.page-article-content
+	width 100%
+	max-width 870px
+	flex 1
+
+.tags-list
+	li
+		display inline-block
+		margin-bottom 4px
+	a
+		display inline-block
+		padding 20px
+		text-align center
+		background-color $color-bg
+		font 12px $Bold
+		letter-spacing 0.01em
+		text-transform uppercase
+		color $secondary-color
+		line-height 1.25
+		&:hover
+			color $basic-white-color
+			background-color $secondary-color

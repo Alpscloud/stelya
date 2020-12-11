@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	//  ========= Variables =========
 	var body = $('body'),
-			html = body.width(),
+	html = body.width(),
 			timer; // for disable scroll
 	// ========= =========== =========== ===========
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
 	$('.js-smooth-scroll-link').on('click', function (e) {
 		e.preventDefault();
 		var id = $(this).attr('href'),
-			top = $(id).offset().top;
+		top = $(id).offset().top;
 
 		$('html, body').animate({scrollTop: top}, 'slow');
 	});	
@@ -54,14 +54,69 @@ $(document).ready(function() {
 	});
 	// ========= =========== =========== ===========
 
+	$('.menu-item-has-children').each(function() {
+		var btn = '<button class="btn-toggle js-toggle-submenu-btn" type="button"></button>';
+		var link = $(this).find('> a');
+		$(btn).insertAfter(link);
+
+	});
+
+	$('.js-toggle-submenu-btn').on('click', function(e) {
+		e.preventDefault();
+		$(this).toggleClass('is-active');
+		$(this).parents('LI').find('UL').stop().slideToggle(150);
+	});
+
+	
+
 	$('.js-open-menu-btn').on('click',function(e) {
 		e.preventDefault();
 		$(this).toggleClass('is-active');
+		$('.js-menu').toggleClass('is-opened');
+
+
+		if ($('.js-callback').hasClass('is-opened')) {
+			$('.js-callback').removeClass('is-opened');
+			$('.languages').removeClass('is-active');
+			$('html').addClass('is-fixed');
+			$('.header .logo').addClass('is-hidden');
+			$('.header-tools .js-open-callback-btn').removeClass('is-active');
+		} else {
+			$('html').toggleClass('is-fixed');
+			$('.header .logo').toggleClass('is-hidden')
+		}
+
+
 	});
 
 	$('.js-open-callback-btn').on('click',function(e) {
 		e.preventDefault();
-		$(this).toggleClass('is-active');
+		
+		var headerBtn = $('.header-tools .js-open-callback-btn');
+
+		if (headerBtn.hasClass('is-active')) {
+			headerBtn.removeClass('is-active');
+		} else {
+			headerBtn.addClass('is-active');
+		}
+
+		$('.js-callback').toggleClass('is-opened');
+		$('.languages').toggleClass('is-active');
+
+		if ($('.js-menu').hasClass('is-opened')) {
+			$('.js-menu').removeClass('is-opened');
+			$('.js-open-menu-btn').removeClass('is-active');
+			$('html').addClass('is-fixed');
+			$('.header .logo').addClass('is-hidden');
+		} else {
+			$('html').toggleClass('is-fixed');
+			$('.header .logo').toggleClass('is-hidden');
+		}
+
+		
+		
+		
+		
 	});
 
 	// Popup
@@ -118,7 +173,7 @@ $(document).ready(function() {
 		advantagesSlider.on('slideChange', function () {
 			var ind = advantagesSlider.realIndex + 1;
 			var current = $('.advantages-slider-counter__current');
-		
+
 			if (current.length > 0) {
 				if (ind == 0) {
 					current.html('01');
@@ -200,8 +255,8 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var self = $(this);
-			inputs = self.find('.js-required-input'),
-			flag = true;
+		inputs = self.find('.js-required-input'),
+		flag = true;
 
 		
 

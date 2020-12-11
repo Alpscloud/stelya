@@ -2,6 +2,11 @@
 	position relative
 	width 75px
 	margin-top 10px
+	&.is-active
+		li.current-lang 
+			a
+				border-color $dark-text-color
+				color $dark-text-color
 	li
 		display block
 		transition all .17s ease-in-out
@@ -16,9 +21,9 @@
 			pointer-events none
 		&.current-lang
 			a
-				border-color $basic-white-color
+				border-color $dark-text-color
 				background-color transparent
-				color $basic-white-color
+				color $dark-text-color
 				&:hover
 					border-color $basic-white-color
 	a
@@ -75,7 +80,7 @@
 	width 77px
 	height 77px
 	position absolute
-	right 0
+	right 30px
 	z-index 2
 	bottom 81.5px
 	svg

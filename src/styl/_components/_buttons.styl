@@ -10,7 +10,7 @@
 	letter-spacing 0.01em
 	transition all .17s ease-in-out
 	backface-visibility hidden
-	width 100%
+	//width 100%
 	max-width 300px
 	&:after
 		pseudo()
@@ -28,7 +28,7 @@
 		width 100%
 		height 100%
 		overflow hidden
-		padding 26px 15px
+		padding 26px 40px
 		position relative
 		color transparent
 		&:after
@@ -61,6 +61,16 @@
 				transform translateY(-102%)
 			&:after
 				color $accent-color
+				
+	&-toggle
+		display inline-block
+		margin-left 10px
+		width 20px
+		height 20px
+		background url('../img/icons/svg/angle-arrow-down.svg') 50% 50% no-repeat / contain
+		will-change transform
+		&.is-active
+			transform rotate(-180deg)
 	
 	&-wide
 		width 100%
