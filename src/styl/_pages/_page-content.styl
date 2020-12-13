@@ -1,0 +1,81 @@
+
+.request-block
+	margin-top 55px
+	padding 60px
+	&__title
+		text-transform uppercase
+		color $dark-text-color
+		font 24px $CMed
+		margin-bottom 40px
+		
+.promos
+	&-block
+		margin-top 35px
+		&__notice
+			text-transform uppercase
+			color $secondary-color
+			letter-spacing 0.01em
+			font 24px $CMed
+			padding 36px 0 36px 36px
+			position relative
+			margin-bottom 60px
+			&:before
+				pseudo()
+				position absolute
+				height 100%
+				left 0
+				width 270px
+				background-color $color-bg
+				vertical-center()
+				z-index -1
+				
+.promo-item
+	margin-bottom 55px
+	
+	&:last-child
+		margin-bottom 0
+		
+	&__row
+		flex-wrap nowrap
+		
+	&__img
+		flex-col-center()
+		background-color $color-bg
+		padding 10px
+		width 100%
+		flex 1
+		max-width 400px
+		img
+			@extends .content-img
+			
+	&__content
+		flex 1
+		padding-left 40px
+		*
+			&:last-child
+				margin-bottom 0
+		
+		ul, ol
+			padding-left 0
+			margin-bottom 15px
+			li
+				margin-bottom 12px
+		
+		p
+			margin-bottom 15px
+
+	
+	&__title
+		text-transform uppercase
+		color $dark-text-color
+		font 30px $CMed
+		margin-bottom 36px
+		
+	&:nth-child(even)
+		.promo-item
+			&__img
+				order 2
+			&__content
+				order 1
+				padding-left 0
+				padding-right 40px

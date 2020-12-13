@@ -134,3 +134,28 @@
 		&:after
 			margin-top 0
 			opacity 1
+			
+
+
+.page-permalink
+	display inline-block
+	position relative
+	text-transform uppercase
+	color $secondary-color
+	letter-spacing 0.1em
+	padding-right 50px
+	font 14px $Bold
+	line-height 1
+	svg
+		display block
+		position absolute
+		vertical-center()
+		right 0
+		width 31px
+		height 24px
+		fill $secondary-color
+		margin-top -2px
+		transition transform .17s ease-in-out
+	&:hover
+		svg
+			transform translate(-5px, -50%)

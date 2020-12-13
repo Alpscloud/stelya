@@ -31,3 +31,45 @@
 				color $dark-text-color
 				&:hover
 					color $secondary-color
+					
+
+	&-block-page
+		border 1px solid rgba($secondary-color, .25)
+		width 100%
+		max-width 450px
+		display inline-block
+		text-align left
+		padding 50px
+		transition background-color .17s ease-in-out
+		&:hover
+			background-color rgba($secondary-color, .25)
+		p
+			margin-bottom 25px
+		&__title
+			text-transform uppercase
+			letter-spacing 0.01em
+			font 30px $CMed
+			color $secondary-color
+			
+		&.prices-style
+	
+			.aside-block-page__title
+				color $light-secondary-color
+			.page-permalink
+				color $light-secondary-color
+				svg
+					fill $light-secondary-color
+			&:hover
+				background-color rgba($light-secondary-color, .25)
+				
+		&.credit-style
+			.aside-block-page__title
+				color $accent-color
+			.page-permalink
+				color $accent-color
+				svg
+					fill $accent-color
+			&:hover
+				background-color rgba($light-secondary-color, .25)
+			
+				

@@ -1,0 +1,178 @@
+.page-product
+	
+	.portfolio-card
+		background-color $basic-white-color
+		
+	.title
+		font-size 40px
+		
+
+.faqs
+	background-color $color-bg
+	margin 0 auto
+	max-width 1170px
+
+.faq
+	margin-bottom 40px
+	&:last-child
+		margin-bottom 0
+	&__question
+		display flex
+		align-items center
+		justify-content space-between
+		padding 0 40px
+		
+		
+		h3
+			text-transform uppercase
+			transition color .17s ease-in-out
+			margin-right 25px
+			font 18px $CMed
+			color $dark-text-color
+	&__answer
+		display none
+		padding 25px 120px 0 120px
+		
+	&:first-child
+		padding-top 40px
+	&:last-child
+		padding-bottom 40px
+			
+	&.is-active
+		.btn-faq-toggle
+			&:after
+				opacity 0
+		.faq__question
+			h3
+				color $secondary-color
+				
+
+.product-colors
+	&__switcher
+		display flex
+		flex-wrap nowrap
+		justify-content space-between
+		margin-bottom 40px
+		.btn-tab
+			flex 1
+			&:first-child
+				border-left-width 2px
+			&:last-child
+				border-right-width 2px
+	&__contents
+		.content
+			margin 0 auto
+			max-width 1170px
+			text-align center
+	&__content
+		&--imgs
+			margin-top 40px
+			display flex
+			margin-left -15px
+			margin-right -15px
+			justify-content center
+			&_col
+				padding 0 15px
+				
+.photo-printing
+	
+	&__row
+		flex-wrap nowrap
+		margin-bottom 50px
+		&:last-child
+			margin-bottom 0
+			
+		&:nth-child(even)
+			img
+				order 2
+				margin-right 0
+				margin-left 30px
+			.content
+				order 1
+		
+		.content
+			flex 1
+	
+	img
+		display block
+		width auto
+		max-width 650px
+		margin-right 30px
+		
+
+.photo-printing__materials
+	margin-top 70px
+	.content
+		margin 0 auto
+		max-width 1170px
+		margin-bottom 25px
+		
+.photo-printing__material
+	padding-top 15px
+	padding-bottom 15px
+	.content
+		font-size 16px
+	&--title
+		text-transform uppercase
+		display flex
+		flex-wrap nowrap
+		align-items center
+		justify-content flex-start
+		position relative
+		text-transform uppercase
+		color $dark-text-color
+		font 18px $CMed
+		margin-bottom 30px
+		
+		&:before
+			margin-right 15px
+			content attr(data-counter)
+			flex none
+			flex-col-center()
+			width 50px
+			height 50px
+			background-color $light-secondary-color
+			border-radius 50%
+			color $basic-white-color
+			font 16px $Bold
+			letter-spacing 0.01em
+			
+// ADvatages
+
+.product-advantage
+	border 1px solid rgba($secondary-color, .25)
+	padding 30px
+	&__ic
+		display block
+		width 60px
+		height 60px
+		background-repeat no-repeat
+		background-size contain
+		background-position 50% 50%
+		margin-bottom 30px
+	&__title
+		color $dark-text-color
+		text-transform uppercase
+		font 20px $CMed
+		margin-bottom 30px
+	&__col
+		padding-top 15px
+		padding-bottom 15px
+
+
+.description-block
+	display flex
+	&:nth-child(odd)
+		.content
+			order 1
+			padding-right 0
+			padding-left 100px
+	&__img
+		width 50%
+		padding-top 0
+	
+	.content
+		width 50%
+		padding-top 100px
+		padding-bottom 100px
+		padding-right 100px

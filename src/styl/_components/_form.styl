@@ -141,4 +141,77 @@ input[type="search"]::-webkit-search-results-decoration
 	&:-ms-input-placeholder
 		font 18px $Reg
 		color rgba($basic-white-color, .4)
+		
+
+
+.form-group
+	&__wrapper
+		margin-bottom 30px
+		.form-group
+			height 100%
+			display flex
+			flex-direction column
+			justify-content flex-end
+			&.is-error
+				.form-group
+					&__label
+						color $error-color
+					&__error--default
+						opacity 1
+						visibility visible
+				
+				.form-input--default
+					border-color $error-color
+					
+	&__label
+		color $light-text-color
+		font-size 16px
+		margin-bottom 12px
+		transition color .17s ease-in-out
+		
+	&__error--default
+		display inline-block
+		position absolute
+		left 0
+		top 100%
+		color $error-color
+		font-size 14px
+		transition all .17s ease-in-out
+		opacity 0
+		visibility hidden
+		
+.form-input
+	&--default
+		background-color $basic-white-color
+		display block
+		width 100%
+		border 1px solid transparent
+		font 16px $Reg
+		color $dark-text-color
+		padding 20px
+		&:hover,
+		&:focus
+			border-color $accent-color
+			
+.request-form
+	.form__notice
+		margin-top 0
+		margin-bottom 25px
+		
+.form-select__wrapper
+	position relative
+	&:after
+		pseudo()
+		position absolute
+		right 15px
+		vertical-center()
+		z-index 1
+		pointer-events none
+		width 18px
+		height 9px
+		background url('../img/icons/svg/select.svg') no-repeat
 	
+.form-select
+	-webkit-appearance none
+	-moz-appearance none
+	appearance none
