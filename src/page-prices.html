@@ -82,7 +82,7 @@
 		<!-- //Header -->
 
 		<!-- Main -->
-		<main class="main page-gutter page-inside page-template">
+		<main class="main page-gutter page-inside page-template" id="home">
 			<section class="page-content gutter-include-form">
 				<div class="container">
 					<!-- Breadcrumbs -->
@@ -307,7 +307,7 @@
 	<!-- FORM -->
 	<div class="form__wrapper">
 		<div class="container">
-			<form class="form form-block">
+			<form class="form form-block simple-form">
 				<!-- Hidden inputs -->
 				<input type="hidden" name="project_name" value="">
 				<input type="hidden" name="admin_email" value="email@email">
@@ -463,7 +463,7 @@
 						<!-- // Hidden inputs -->
 
 						<div class="form-group">
-							<input type="email" name="email" class="form-input__email" placeholder="Введите Email">
+							<input type="email" name="email" class="form-input__email" placeholder="Введите Email" required>
 							<button class="btn-subscribe-submit" type="submit"></button>
 						</div>
 					</form>
@@ -620,7 +620,7 @@
 
 			<div class="fullscreen-popup__col col-w-50">
 				<p class="popup__title">Закажите<br>обратный звонок</p>
-				<form class="form ">
+				<form class="form simple-form">
 					<!-- Hidden inputs -->
 					<input type="hidden" name="project_name" value="">
 					<input type="hidden" name="admin_email" value="email@email">
@@ -666,6 +666,7 @@
 	</div>
 	<!-- //container -->
 </div>
+
 <!-- Popup -->
 <div class="popup js-popup js-consultation-popup" >
 	<div class="popup__overflow">
@@ -674,7 +675,7 @@
 			<!-- Popup content-->
 			<div class="popup__content">
 				<p class="popup__title">оставьте заявку<br>на консультацию</p>
-				<form class="form ">
+				<form class="form simple-form">
 					<!-- Hidden inputs -->
 					<input type="hidden" name="project_name" value="">
 					<input type="hidden" name="admin_email" value="email@email">

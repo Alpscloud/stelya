@@ -176,3 +176,93 @@
 		padding-top 100px
 		padding-bottom 100px
 		padding-right 100px
+		
+
+.product-nav__wrapper
+	transition all .17s ease-in-out
+	background-color $basic-white-color
+	&.is-fixed
+		position fixed
+		top 0
+		left 0
+		width 100%
+		z-index 5
+		box-shadow 0 5px 10px rgba($basic-black-color, .1)
+		
+.product-nav
+	li
+		display inline-block
+		margin-right 56px
+		&:last-child
+			margin-right 0
+
+		
+	a
+		display block
+		text-transform uppercase
+		font 14px $Bold
+		color $dark-text-color
+		position relative
+		padding 45px 0
+		&:before
+			pseudo()
+			position absolute
+			bottom 0
+			horisontal-center()
+			height 2px
+			background-color $secondary-color
+			transition width .17s ease-in-out
+			width 0
+		&.is-active
+			color $secondary-color
+			&:before
+				width 100%
+		&:hover
+			color $secondary-color
+			
+
+.product-price
+	font 24px $CMed
+	color $dark-text-color
+	margin-right 38px
+	white-space nowrap
+	line-height 1
+	&__col
+		display flex
+		align-items center
+		justify-content flex-end
+		
+		.btn
+			flex none
+
+
+.page-promo
+	padding-top 165px
+	padding-bottom 40px
+	
+	.title
+		margin-bottom 40px
+		font-size 50px
+		
+
+		
+	&__img
+		margin-bottom 40px
+		img
+			display block
+			
+.product-promo-advantage
+	display flex
+	align-items center
+	justify-content flex-start
+	color $dark-text-color
+	text-align left
+	&__ic
+		display inline-block
+		width 40px
+		height 40px
+		background-repeat no-repeat
+		background-size contain
+		background-position 50% 50%
+		flex none
+		margin-right 25px
