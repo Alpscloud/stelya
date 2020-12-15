@@ -401,6 +401,11 @@ $(document).ready(function() {
 	});
 
 
+	setTimeout(function(){
+		$('body').addClass('is-loaded');
+	}, 2000);
+
+
 
 
 
