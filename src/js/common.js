@@ -301,6 +301,17 @@ $(document).ready(function() {
 
 	$('[data-fancybox]').fancybox();
 
+
+	var tables = $('.page-article-content table');
+
+	if (tables.length > 0) {
+
+		tables.each(function() {
+			$(this).wrap('<div class="table-wrap">');
+		});
+
+	}
+
 	// ========= Ajax form ===========
 	$('.form-input').on('focus', function() {
 		var self = $(this);
@@ -327,10 +338,19 @@ $(document).ready(function() {
 	});
 
 	$('.js-required-input').on('focus',function() {
-		var formGroup = $(this).parents('.form-group__label');
+		var formGroupLabel = $(this).parents('.form-group__label');
+		var formGroupDiv = $(this).parents('.form-group');
 
-		if(formGroup.hasClass('is-error')) {
-			formGroup.removeClass('is-error');
+		if (formGroupLabel) {
+			if(formGroupLabel.hasClass('is-error')) {
+				formGroupLabel.removeClass('is-error');
+			}
+		}
+
+		if (formGroupDiv) {
+			if(formGroupDiv.hasClass('is-error')) {
+				formGroupDiv.removeClass('is-error');
+			}
 		}
 
 	});
@@ -360,6 +380,46 @@ $(document).ready(function() {
 			data: self.serialize()
 		}).done(function() {
 			$('.js-popup').fadeOut(150);
+			$('.js-callback').removeClass('is-opened');
+			$('.js-open-callback-btn').removeClass('is-active');
+			$('.js-thanks-popup').fadeIn(150);
+			$('html').addClass('is-fixed');
+			setTimeout(function() {
+				$('.js-thanks-popup').fadeOut(150);
+				$('html').removeClass('is-fixed');
+				self.find('.form-group__label').each(function() {
+					$(this).removeClass('is-active');
+				});
+				self.trigger("reset");
+			}, 2500);
+		});
+
+	});
+
+	$('.request-form').submit(function(e) {
+		e.preventDefault();
+
+		var self = $(this);
+		inputs = self.find('.js-required-input'),
+		flag = true;
+
+		
+
+		// Validate
+		$(inputs).each(function() {
+			if(!$(this).val() || $(this).val() == "") {
+				$(this).parents('.form-group').addClass('is-error');
+				flag = false;
+			}
+		});
+
+		if(!flag) {return false;}
+
+		$.ajax({
+			type: "POST",
+			url: "/wp-content/themes/stelya-theme/mail.php", //Change
+			data: self.serialize()
+		}).done(function() {
 			$('.js-thanks-popup').fadeIn(150);
 			$('html').addClass('is-fixed');
 			setTimeout(function() {
